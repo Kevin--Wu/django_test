@@ -8,5 +8,5 @@ def hello(request):
  
 def runoob(request):
     dictReplyData = {}
-    dictReplyData	
-    return render(request, 'runoob.html', context)
+    dictReplyData["listTest"] = ["test1", "test2", "test3"]
+    return render(request, 'runoob.html', dictReplyData)
