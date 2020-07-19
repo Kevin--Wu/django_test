@@ -7,6 +7,5 @@ def hello(request):
 
  
 def runoob(request):
-    dictReplyData = {}
-    dictReplyData["listTest"] = ["test1", "test2", "test3"]
-    return render(request, 'runoob.html', dictReplyData)
+    views_str = "<a href='https://www.runoob.com/'>点击跳转</a>"
+    return render(request, "runoob.html", {"views_str": views_str})
