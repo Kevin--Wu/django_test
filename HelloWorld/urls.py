@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
  
-import HelloWorld.views as views
+import HelloWorld.test_views as test_views
+import HelloWorld.testdb as testdb
+import HelloWorld.search as search
  
 urlpatterns = [
-    url(r'^$', views.hello),
-    url(r'runoob/', views.runoob),    
+    url(r'^$', test_views.hello),
+    url(r'runoob/', test_views.runoob),   
+    url(r'testdb/', testdb.testdb),
+    url(r'^search-form$', search.search_form),
+    url(r'^search$', search.search),
+    url(r'^search-post$', search.search_post),
 ]
