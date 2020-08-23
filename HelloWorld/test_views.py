@@ -3,7 +3,7 @@ from django.shortcuts import render
  
 
 def hello(request):
-    return HttpResponse("Hello world ! ")
+    return HttpResponse("Hello world ! \ntest: <a href='https://www.runoob.com/'>点击跳转</a>")
 
  
 def runoob(request):
