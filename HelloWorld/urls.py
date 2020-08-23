@@ -13,7 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
  
 import HelloWorld.test_views as test_views
 import HelloWorld.testdb as testdb
@@ -22,8 +22,13 @@ import HelloWorld.search as search
 urlpatterns = [
     url(r'^$', test_views.hello),
     url(r'runoob/', test_views.runoob),   
+    url(r'^index/([0-9]{4})/$', test_views.print_year),
     url(r'testdb/', testdb.testdb),
     url(r'^search-form$', search.search_form),
     url(r'^search$', search.search),
     url(r'^search-post$', search.search_post),
+
+    
+    url(r"app01/", include("app01.urls")),
+    url(r"app02/", include("app02.urls")),
 ]
