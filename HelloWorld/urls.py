@@ -13,6 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+import django.contrib.admin as admin
 from django.conf.urls import url, include
  
 import HelloWorld.test_views as test_views
@@ -20,6 +21,9 @@ import HelloWorld.testdb as testdb
 import HelloWorld.search as search
  
 urlpatterns = [
+    # admin
+    url(r'^admin/', admin.site.urls),
+
     url(r'^$', test_views.hello),
     url(r'runoob/', test_views.runoob),   
     url(r'^index/([0-9]{4})/$', test_views.print_year),
